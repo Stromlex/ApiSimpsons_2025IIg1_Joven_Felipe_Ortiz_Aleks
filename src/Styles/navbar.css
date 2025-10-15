@@ -1,0 +1,138 @@
+/* 🔹 Barra de navegación */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, #111, #004e92);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+/* 🔸 Contenedor del logo y botón */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 🟡 Logo optimizado */
+.navbar-logo img {
+  height: 55px;
+  width: auto;
+  max-height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px #00eaff);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px #00ffff);
+}
+
+/* 🔹 Links */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #00eaff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-links a:hover {
+  border-bottom: 2px solid #00eaff;
+  color: #fff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+/* 🔸 Botón menú hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #00eaff;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* ✨ Animación al abrir */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  .navbar-links a {
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    text-align: center;
+    color: #00eaff;
+  }
+
+  .navbar-links a:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border: none;
+  }
+
+  /* Animación suave */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

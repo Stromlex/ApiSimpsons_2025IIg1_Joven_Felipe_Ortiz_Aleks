@@ -1,0 +1,195 @@
+/* 🎬 Fondo general */
+.episodes-bg {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  background: radial-gradient(circle at top left, #002f4b, #000428);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🧠 Título */
+.episodes-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00eaff;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+  margin-bottom: 3rem;
+}
+
+/* 🧩 Contenedor de tarjetas */
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* 💫 Tarjetas de episodios */
+.episode-card {
+  background: linear-gradient(180deg, #0a0f1f, #0d1a2b);
+  border-radius: 18px;
+  padding: 1.2rem;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 420px;
+}
+
+/* ✨ Hover de tarjeta */
+.episode-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* 🖼️ Imagen del episodio */
+.episode-image {
+  width: 100%;
+  height: 230px;
+  background: radial-gradient(circle at center, #04121f 40%, #000814);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.episode-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔹 Mantiene proporciones sin cortar */
+  object-position: center;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: rgba(0, 255, 255, 0.03);
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.3));
+}
+
+/* ✨ Efecto hover en imagen */
+.episode-card:hover .episode-image img {
+  transform: scale(1.08) rotate(-2deg);
+  filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.7));
+}
+
+/* 🧾 Información */
+.episode-info {
+  flex: 1;
+  color: #d9faff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.episode-info h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 0 0 6px cyan;
+  margin-bottom: 0.6rem;
+}
+
+.episode-info p {
+  font-size: 0.95rem;
+  color: #8dd8ff;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0.3rem 0;
+}
+
+/* 🔍 Filtros y buscador */
+.filters-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.6rem 1rem;
+  border: 1px solid cyan;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 8px cyan;
+}
+
+.btn-search {
+  background: cyan;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-search:hover {
+  background: #00aaff;
+  box-shadow: 0 0 10px cyan;
+}
+
+
+/* 📱 Responsivo */
+@media (max-width: 992px) {
+  .episodes-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .episodes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .episode-card {
+    height: 400px;
+  }
+
+  .episode-image {
+    height: 190px;
+  }
+}
+
+@media (max-width: 576px) {
+  .episodes-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .episode-card {
+    height: 380px;
+  }
+
+  .episode-image {
+    height: 170px;
+  }
+}

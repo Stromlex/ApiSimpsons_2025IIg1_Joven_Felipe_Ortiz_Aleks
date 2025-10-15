@@ -1,0 +1,190 @@
+/* 🎆 styles.css - Estilo Los Simpson + Neón Futurista */
+
+:root {
+  --simpson-yellow: #FFD90F;
+  --simpson-blue: #00BFFF;
+  --simpson-pink: #FF69B4;
+  --dark-bg: #0a0a1a;
+  --text-light: #ffffff;
+  --shadow-neon: 0 0 10px var(--simpson-blue), 0 0 20px var(--simpson-pink);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 🔹 NAVBAR */
+nav {
+  background: linear-gradient(90deg, var(--simpson-blue), var(--simpson-pink));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-neon);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  color: var(--simpson-yellow);
+  text-shadow: 0 0 10px var(--simpson-yellow);
+  font-weight: 800;
+  letter-spacing: 2px;
+  transition: transform 0.3s;
+}
+
+nav h1:hover {
+  transform: scale(1.1);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: var(--simpson-yellow);
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: var(--simpson-yellow);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* 🔸 HOME PAGE */
+.home {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.home h2 {
+  font-size: 3rem;
+  color: var(--simpson-yellow);
+  text-shadow: 0 0 20px var(--simpson-yellow);
+  margin-bottom: 1rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--simpson-blue);
+  }
+  to {
+    text-shadow: 0 0 25px var(--simpson-pink), 0 0 50px var(--simpson-blue);
+  }
+}
+
+.home p {
+  font-size: 1.3rem;
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 💡 BUTTONS */
+button {
+  background: linear-gradient(45deg, var(--simpson-yellow), var(--simpson-pink));
+  border: none;
+  color: #000;
+  padding: 0.8rem 1.6rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px var(--simpson-pink);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  box-shadow: 0 0 30px var(--simpson-yellow), 0 0 50px var(--simpson-pink);
+  transform: scale(1.05);
+}
+
+/* 🟦 CARDS */
+.card {
+  background-color: #121233;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px var(--simpson-blue), 0 0 50px var(--simpson-pink);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: var(--simpson-yellow);
+  text-shadow: 0 0 10px var(--simpson-pink);
+}
+
+/* 🌀 FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  background: linear-gradient(90deg, var(--simpson-blue), var(--simpson-pink));
+  margin-top: 4rem;
+  box-shadow: var(--shadow-neon);
+}
+
+footer p {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ✨ SCROLLBAR PERSONALIZADA */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--simpson-pink), var(--simpson-blue));
+  border-radius: 5px;
+}
+
+/* 🧠 ANIMACIÓN GENERAL */
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

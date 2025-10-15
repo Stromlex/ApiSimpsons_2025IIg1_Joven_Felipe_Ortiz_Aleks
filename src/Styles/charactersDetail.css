@@ -1,0 +1,323 @@
+/* Styles/charactersDetail.css */
+
+/* Fondo principal con temática cybernética */
+.detail-bg {
+  background: linear-gradient(135deg, #0a0f1f 0%, #0d1a2b 50%, #071020 100%);
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+}
+
+/* Contenedor principal con efecto neón */
+.detail-wrapper {
+  background: linear-gradient(180deg, #0a0f1f, #0d1a2b);
+  border-radius: 20px;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Efecto de brillo en los bordes */
+.detail-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, #39c2ff, #00ffaa, #ff3366);
+  border-radius: 22px;
+  z-index: -1;
+  animation: borderGlow 3s linear infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Header con estilo cyber */
+.detail-header {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(57, 194, 255, 0.1));
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Imagen con efecto neón */
+.detail-image {
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50% !important;
+  border: 3px solid rgba(0, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.4),
+    inset 0 0 20px rgba(0, 255, 255, 0.1) !important;
+  object-fit: cover;
+  background: radial-gradient(circle, #071020 40%, #000814);
+  transition: all 0.3s ease;
+}
+
+.detail-image:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.6),
+    inset 0 0 25px rgba(0, 255, 255, 0.2) !important;
+  border: 3px solid rgba(0, 255, 255, 0.8) !important;
+}
+
+/* Información del personaje */
+.detail-info h2 {
+  font-size: 2.5rem !important;
+  color: #ffffff !important;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  background: linear-gradient(90deg, #ffffff, #39c2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.occupation {
+  font-size: 1.3rem !important;
+  color: #39c2ff !important;
+  font-style: italic;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(57, 194, 255, 0.5);
+}
+
+/* Tags de información */
+.info-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  color: #00ffff;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.tag.alive {
+  background: rgba(0, 255, 170, 0.15) !important;
+  border: 1px solid rgba(0, 255, 170, 0.4);
+  color: #00ffaa;
+}
+
+.tag.dead {
+  background: rgba(255, 51, 102, 0.15) !important;
+  border: 1px solid rgba(255, 51, 102, 0.4);
+  color: #ff3366;
+}
+
+/* Cuerpo de la página */
+.detail-body {
+  padding: 30px;
+  background: rgba(10, 15, 31, 0.7);
+}
+
+/* Secciones de tarjetas */
+.card-section {
+  background: linear-gradient(135deg, rgba(13, 26, 43, 0.9), rgba(10, 15, 31, 0.9));
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card-section:hover {
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.card-section h3 {
+  color: #39c2ff !important;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 8px rgba(57, 194, 255, 0.5);
+}
+
+.card-section p {
+  line-height: 1.6;
+  color: #d9faff;
+  font-size: 1.1rem;
+}
+
+/* Frases icónicas */
+.phrases-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.phrase-card {
+  background: rgba(0, 255, 255, 0.1) !important;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border-left: 4px solid #39c2ff;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #ffffff;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(57, 194, 255, 0.3);
+}
+
+.phrase-card:hover {
+  background: rgba(57, 194, 255, 0.2) !important;
+  transform: translateX(8px);
+  box-shadow: 0 5px 20px rgba(57, 194, 255, 0.3);
+}
+
+/* Lista de primera aparición */
+.card-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d9faff;
+}
+
+.card-section li:last-child {
+  border-bottom: none;
+}
+
+.card-section strong {
+  color: #39c2ff;
+  text-shadow: 0 0 5px rgba(57, 194, 255, 0.5);
+}
+
+/* Footer */
+.detail-footer {
+  background: rgba(10, 15, 31, 0.9);
+  padding: 25px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Botón de volver - mismo estilo que tu CharacterCard */
+.btn-back {
+  display: inline-block;
+  padding: 12px 30px;
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  color: #00ffff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.btn-back:hover {
+  background: rgba(0, 255, 255, 0.3);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.6),
+    0 0 30px rgba(0, 255, 255, 0.4);
+  transform: translateY(-3px);
+  color: #000000;
+  background: #00ffff;
+}
+
+/* Estados de carga y error */
+.loading {
+  text-align: center;
+  font-size: 2rem;
+  color: #39c2ff;
+  padding: 50px;
+  background: rgba(10, 15, 31, 0.9);
+  border-radius: 15px;
+  margin: 20px;
+  border: 2px solid rgba(57, 194, 255, 0.5);
+  text-shadow: 0 0 10px rgba(57, 194, 255, 0.5);
+}
+
+.error {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ff3366;
+  padding: 30px;
+  background: rgba(255, 51, 102, 0.1);
+  border-radius: 15px;
+  margin: 20px;
+  border: 2px solid rgba(255, 51, 102, 0.5);
+  text-shadow: 0 0 8px rgba(255, 51, 102, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detail-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .detail-image {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  .detail-info h2 {
+    font-size: 2rem !important;
+  }
+  
+  .detail-body {
+    padding: 20px;
+  }
+  
+  .info-tags {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-bg {
+    padding: 10px;
+  }
+  
+  .card-section {
+    padding: 20px;
+  }
+  
+  .detail-header {
+    padding: 20px 15px;
+  }
+}

@@ -1,0 +1,144 @@
+/* 🎬 Fondo general */
+.locations-container {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  background: radial-gradient(circle at top left, #002f4b, #000428);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🧠 Título */
+.locations-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00eaff;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+  margin-bottom: 3rem;
+}
+
+/* 🧩 Contenedor de tarjetas */
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* 💫 Tarjetas de ubicación */
+.location-card {
+  background: linear-gradient(180deg, #0a0f1f, #0d1a2b);
+  border-radius: 18px;
+  padding: 1.2rem;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 420px;
+}
+
+/* ✨ Hover de tarjeta */
+.location-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* 🖼️ Imagen */
+.location-image {
+  width: 100%;
+  height: 230px;
+  background: radial-gradient(circle at center, #04121f 40%, #000814);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔹 Ocupa todo el cuadro sin deformarse */
+  object-position: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.3));
+}
+
+/* ✨ Efecto hover en imagen */
+.location-card:hover img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.7));
+}
+
+/* 🧾 Información */
+.location-info {
+  flex: 1;
+  color: #d9faff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location-info h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 0 0 6px cyan;
+  margin-bottom: 0.6rem;
+}
+
+.location-info p {
+  font-size: 0.95rem;
+  color: #8dd8ff;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 992px) {
+  .locations-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .locations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .location-card {
+    height: 400px;
+  }
+
+  .location-image {
+    height: 190px;
+  }
+}
+
+@media (max-width: 576px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .location-card {
+    height: 380px;
+  }
+
+  .location-image {
+    height: 170px;
+  }
+}

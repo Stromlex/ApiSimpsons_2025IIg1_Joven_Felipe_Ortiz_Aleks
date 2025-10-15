@@ -1,0 +1,41 @@
+/* 🎬 GLOBAL.CSS - Estilos generales y base */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+  --yellow: #ffcc00;
+  --blue: #00b8ff;
+  --pink: #ff00c8;
+  --dark: #0a0a0a;
+  --light: #f4f4f4;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #1a1a1a, #000);
+  color: white;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.btn {
+  background: var(--blue);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: var(--pink);
+  box-shadow: 0 0 10px var(--pink);
+}

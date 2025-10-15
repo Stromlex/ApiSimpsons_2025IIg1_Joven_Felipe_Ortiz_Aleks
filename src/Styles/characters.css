@@ -1,0 +1,254 @@
+/* 🎬 Fondo general */
+.characters-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f1f 0%, #0d1a2b 50%, #071020 100%);
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* 🧊 Contenedor principal */
+.characters-container {
+  background: rgba(10, 15, 31, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 25px;
+  padding: 3rem 2.5rem;
+  max-width: 1400px;
+  width: 100%;
+  margin-top: 2rem;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(0, 255, 255, 0.1),
+    inset 0 0 12px rgba(0, 255, 255, 0.05);
+}
+
+/* 🧠 Título */
+.characters-container h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffffff, #00c9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+/* 🧩 Grilla de personajes */
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem 2.5rem;
+  justify-items: center;
+  align-items: stretch;
+  padding: 0 1rem;
+}
+
+/* 💫 Tarjetas */
+.character-card {
+  background: linear-gradient(180deg, #0a0f1f, #0d1a2b);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 440px;
+}
+
+.character-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* 📸 Imagen - tamaño fijo y centrado */
+.character-card img {
+  width: 100%;
+  height: 220px; /* 🔹 Tamaño uniforme */
+  object-fit: contain; /* Mantiene proporción sin cortar */
+  border-radius: 12px;
+  background: radial-gradient(circle, #071020 40%, #000814);
+  margin-bottom: 1.2rem;
+  padding: 0.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: block;
+}
+
+/* 🔹 En caso de que quieras que todas las imágenes ocupen el mismo "espacio visual" (sin zonas vacías) usa object-fit: cover */
+.character-card img.force-fit {
+  object-fit: cover;
+}
+
+/* 🔹 Al pasar el mouse */
+.character-card:hover img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8));
+}
+
+/* 🧾 Contenido */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-content h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 0.6rem 0 0.3rem 0;
+  text-shadow: 0 0 6px cyan;
+  min-height: 2.5rem;
+}
+
+.card-content .occupation {
+  color: #39c2ff;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+/* 🏷️ Estado y edad */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #d9faff;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.status {
+  font-weight: bold;
+  text-shadow: 0 0 5px cyan;
+}
+
+.status-alive {
+  color: #00ffaa;
+}
+
+.status-dead {
+  color: #ff3366;
+}
+
+.status-unknown {
+  color: #cccccc;
+}
+
+/* 🔘 Botón Detalles */
+.btn-detail {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid cyan;
+  color: #00ffff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.btn-detail:hover {
+  background: cyan;
+  color: #000;
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 992px) {
+  .characters-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .characters-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+  }
+
+  .character-card {
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .characters-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .character-card {
+    height: 380px;
+  }
+}
+/* 💫 Tarjetas */
+.character-card {
+  background: linear-gradient(180deg, #0a0f1f, #0d1a2b);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 460px;
+}
+
+/* 📸 Imagen – centrada, proporcionada y sin recortes */
+.character-card img {
+  width: 100%;
+  height: 230px;                    /* 🔹 Tamaño fijo */
+  object-fit: contain;              /* 🔹 Evita recortes */
+  object-position: center center;   /* 🔹 Centra siempre la imagen */
+  background: radial-gradient(circle at center, #071020 40%, #000814);
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  display: block;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  mix-blend-mode: normal;           /* 🔹 Evita que se mezclen colores raros */
+}
+
+/* 🔹 Ajuste adicional para imágenes con fondos transparentes */
+.character-card img {
+  background-color: rgba(0, 255, 255, 0.05);
+  box-shadow: inset 0 0 12px rgba(0, 255, 255, 0.1);
+}
+
+/* 🔹 Hover animado sutil */
+.character-card:hover img {
+  transform: scale(1.07);
+  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.8));
+}
+
+/* 🧩 Grilla con separación más aireada */
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem 3rem;
+  justify-items: center;
+  align-items: start;
+  padding: 0 1rem;
+}

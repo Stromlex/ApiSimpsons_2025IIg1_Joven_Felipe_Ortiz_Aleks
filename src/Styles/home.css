@@ -1,0 +1,123 @@
+/* 🎬 Fondo principal */
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f1f 0%, #0d1a2b 50%, #071020 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🌇 Imagen decorativa del fondo */
+.home-background {
+  position: absolute;
+  inset: 0;
+  background: url("https://diesimpsons.de/media/socialmedia/springfield-skyline.jpg")
+    center/cover no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* 🧊 Contenedor de contenido */
+.home-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  background: rgba(10, 15, 31, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+}
+
+/* 🟡 Logo original */
+.home-logo {
+  width: 320px;
+  height: auto;
+  margin-bottom: 2rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px #ffeb3b);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.home-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 25px #ffee58);
+}
+
+/* 🧠 Títulos */
+.home-content h1 {
+  font-size: 2.8rem;
+  color: #ffeb3b;
+  text-shadow: 0 0 12px #ffeb3b;
+  margin-bottom: 0.6rem;
+}
+
+.home-content h3 {
+  font-size: 1.3rem;
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* 📜 Descripción */
+.home-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #d9faff;
+  margin-bottom: 2.5rem;
+}
+
+/* 🔘 Botones */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  background: linear-gradient(90deg, #00e5ff, #00b0ff);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #00ffff, #00c9ff);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .home-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .home-logo {
+    width: 240px;
+  }
+
+  .home-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+  }
+}

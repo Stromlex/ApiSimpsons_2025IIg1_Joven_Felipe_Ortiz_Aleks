@@ -1,0 +1,27 @@
+/* ✨ DETAILS.CSS - detalle de personaje con foco brillante */
+.detail-container {
+  background: linear-gradient(135deg, #000, #20004d);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.detail-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--yellow);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0 20px var(--yellow);
+  width: 80%;
+  max-width: 500px;
+}
+
+.detail-card img {
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}

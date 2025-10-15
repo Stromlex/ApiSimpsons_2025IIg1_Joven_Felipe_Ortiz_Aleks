@@ -1,0 +1,80 @@
+/* 🌆 Tarjeta base */
+.location-card {
+  background: linear-gradient(180deg, #0a0f1f, #0d1a2b);
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 420px;
+}
+
+/* ✨ Hover */
+.location-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* 🖼️ Imagen */
+.location-image {
+  width: 100%;
+  height: 230px; /* 🔹 Altura uniforme */
+  background: radial-gradient(circle at center, #04121f 40%, #000814);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔹 Se ajusta bien sin dejar espacios */
+  object-position: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.3));
+}
+
+/* ✨ Hover imagen */
+.location-card:hover img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.7));
+}
+
+/* 🧾 Info */
+.location-info {
+  color: #d9faff;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.location-info h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-shadow: 0 0 6px cyan;
+  margin-bottom: 0.6rem;
+}
+
+.location-info p {
+  font-size: 0.95rem;
+  color: #8dd8ff;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .location-card {
+    height: 380px;
+  }
+  .location-image {
+    height: 190px;
+  }
+}

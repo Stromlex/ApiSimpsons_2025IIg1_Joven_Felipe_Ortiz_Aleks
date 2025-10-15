@@ -1,0 +1,64 @@
+/* 🔹 Contenedor principal */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+/* 🔹 Botones base */
+.pagination button {
+  background: rgba(0, 255, 255, 0.1);
+  color: #00eaff;
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 45px;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+}
+
+/* ✨ Efecto al pasar el mouse */
+.pagination button:hover {
+  background: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* 🔵 Página activa */
+.pagination button.active {
+  background: linear-gradient(90deg, #00eaff, #00bfff);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  text-shadow: none;
+  transform: scale(1.05);
+}
+
+/* 🚫 Botones deshabilitados */
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #b8d8e8;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 576px) {
+  .pagination {
+    gap: 0.5rem;
+  }
+
+  .pagination button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
