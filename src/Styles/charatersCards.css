@@ -205,14 +205,37 @@
 @media (max-width: 576px) {
   .characters-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
   }
 
   .character-card {
-    height: 380px;
+    height: auto; /* 🔹 Se adapta al contenido */
+    max-width: 90%;
+    padding: 1rem;
   }
 
   .card-image {
-    height: 160px;
+    height: 140px;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-content .occupation {
+    font-size: 0.85rem;
+  }
+
+  .card-info {
+    font-size: 0.8rem;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .btn-detail {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
   }
 }
