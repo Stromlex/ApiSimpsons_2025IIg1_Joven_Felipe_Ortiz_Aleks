@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CharacterCard from "../components/CharacterCard";
 import Loader from "../components/Loader";
 import Pagination from "../components/Pagination";
-import "../styles/characters.css";
+import "../Styles/characters.css";
 
 
 

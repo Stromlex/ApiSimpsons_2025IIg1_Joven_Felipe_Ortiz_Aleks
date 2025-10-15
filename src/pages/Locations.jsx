@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
   import LocationCard from "../components/LocationCard";
   import Pagination from "../components/Pagination";
   import Loader from "../components/Loader";
-  import "../styles/locations.css";
+  import "../Styles/locations.css";
   
 
   export default function Locations() {

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import EpisodeCard from "../components/EpisodeCard";
 import Pagination from "../components/Pagination";
 import Loader from "../components/Loader";
-import "../styles/episodes.css";
+import "../Styles/episodes.css";
 
 export default function Episodes() {
   const [allEpisodes, setAllEpisodes] = useState([]); // todos los episodios descargados
