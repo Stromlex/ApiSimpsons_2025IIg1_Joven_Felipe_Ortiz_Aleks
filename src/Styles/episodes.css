@@ -129,7 +129,7 @@
   padding: 0.6rem 1rem;
   border: 1px solid cyan;
   border-radius: 8px;
-  background: rgba(0, 0, 0, 0.5);
+  background: #000428;
   color: white;
   font-size: 1rem;
   outline: none;
@@ -155,6 +155,8 @@
   background: #00aaff;
   box-shadow: 0 0 10px cyan;
 }
+
+
 
 
 /* 📱 Responsivo */

@@ -169,86 +169,62 @@
   box-shadow: 0 0 10px cyan, 0 0 20px cyan;
 }
 
-/* 📱 Responsivo */
-@media (max-width: 992px) {
-  .characters-grid {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .characters-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.8rem;
-  }
-
-  .character-card {
-    height: 400px;
-  }
-}
-
+/* 📱 Responsivo full-width para móviles - imagen adaptativa */
 @media (max-width: 576px) {
+  .characters-bg {
+    padding: 0.5rem 0;
+  }
+
+  .characters-container {
+    padding: 1rem 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .characters-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
+    justify-items: stretch;
+    padding: 0;
   }
 
   .character-card {
-    height: 380px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 0;
   }
-}
-/* 💫 Tarjetas */
-.character-card {
-  background: linear-gradient(180deg, #0a0f1f, #0d1a2b);
-  border-radius: 16px;
-  padding: 1.5rem;
-  width: 100%;
-  max-width: 280px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
-  border: 2px solid rgba(0, 255, 255, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 460px;
-}
 
-/* 📸 Imagen – centrada, proporcionada y sin recortes */
-.character-card img {
-  width: 100%;
-  height: 230px;                    /* 🔹 Tamaño fijo */
-  object-fit: contain;              /* 🔹 Evita recortes */
-  object-position: center center;   /* 🔹 Centra siempre la imagen */
-  background: radial-gradient(circle at center, #071020 40%, #000814);
-  border-radius: 12px;
-  margin-bottom: 1.2rem;
-  padding: 0.8rem;
-  display: block;
-  transition: transform 0.35s ease, filter 0.35s ease;
-  mix-blend-mode: normal;           /* 🔹 Evita que se mezclen colores raros */
-}
+  .character-card img {
+    width: 100%;       /* Ancho completo */
+    height: auto;      /* Mantiene proporción original */
+    object-fit: cover; /* Corta la imagen si es necesario sin deformar */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
 
-/* 🔹 Ajuste adicional para imágenes con fondos transparentes */
-.character-card img {
-  background-color: rgba(0, 255, 255, 0.05);
-  box-shadow: inset 0 0 12px rgba(0, 255, 255, 0.1);
-}
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
 
-/* 🔹 Hover animado sutil */
-.character-card:hover img {
-  transform: scale(1.07);
-  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.8));
-}
+  .card-content .occupation {
+    font-size: 0.9rem;
+  }
 
-/* 🧩 Grilla con separación más aireada */
-.characters-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 3rem 3rem;
-  justify-items: center;
-  align-items: start;
-  padding: 0 1rem;
+  .card-info {
+    flex-direction: column;
+    font-size: 0.85rem;
+    gap: 0.3rem;
+  }
+
+  .btn-detail {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
 }
